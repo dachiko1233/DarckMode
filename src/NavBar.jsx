@@ -1,4 +1,4 @@
-export function NavBar({ dark, onDark }) {
+export function NavBar({ dark, onDark, setPage }) {
   return (
     <nav
       className={`w-full fixed top-0 left-0 z-10 transition ${
@@ -9,18 +9,24 @@ export function NavBar({ dark, onDark }) {
         <h1 className="text-2xl font-bold text-blue-500">Mybrand</h1>
 
         <div className="flex gap-6 items-center">
-          <a href="#" className="hover:text-blue-500 transition">
+          <button
+            onClick={() => setPage("home")}
+            className="hover:text-blue-500 transition"
+          >
             Home
-          </a>
-          <a href="#" className="hover:text-blue-500 transition">
+          </button>
+          <button
+            onClick={() => setPage("features")}
+            className="hover:text-blue-500 transition"
+          >
             About us
-          </a>
-          <a href="#" className="hover:text-blue-500 transition">
-            Service
-          </a>
-          <a href="#" className="hover:text-blue-500 transition">
-            Contact
-          </a>
+          </button>
+          <button
+            onClick={() => setPage("services")}
+            className="hover:text-blue-500 transition"
+          >
+            Services
+          </button>
 
           <button
             onClick={onDark}

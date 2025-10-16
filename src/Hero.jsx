@@ -1,7 +1,7 @@
 export function Hero({ dark }) {
   return (
     <section
-      className={`min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-8 pt-24 transition-normal${
+      className={`min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-8 pt-24 transition${
         dark
           ? "bg-gray-900 text-gray-100"
           : "bg-gradient-to-br from-blue-50 to-blue-100 text-gray-800"
