@@ -6,8 +6,8 @@ import { NavBar } from "./NavBar";
 import Services from "./Services";
 
 export default function App() {
-  const [dark, setDark] = useState(false);
-  const [page, setPage] = useState("Home");
+  const [dark, setDark] = useState(true);
+  const [page, setPage] = useState("home");
   function toggleDark() {
     setDark(!dark);
   }

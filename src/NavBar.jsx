@@ -5,7 +5,7 @@ export function NavBar({ dark, onDark, setPage }) {
         dark ? "bg-gray-900 text-gray-100" : "bg-white text-gray-800 shadow-md"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <h1 className="text-2xl font-bold text-blue-500">Mybrand</h1>
 
         <div className="flex gap-6 items-center">

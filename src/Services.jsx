@@ -1,115 +1,83 @@
-import { useState } from "react";
+export default function ThreeServices({ dark }) {
+  const services = [
+    {
+      title: "Dark Psychology & Gaslighting Manipulation",
+      image:
+        "https://covers.storytel.com/jpg-640/9798368965062.53bf9ecb-db99-4303-ae06-d815ea66521c?optimize=high&quality=70&width=600",
+      description: "How to Analyze People and Master Human Behaviour...",
+    },
 
-export default function Services({ dark }) {
-  const mediaList = [
     {
-      title: "Inside Out",
+      title: "Mindfulness Video Library",
       image:
-        "https://m.media-amazon.com/images/I/71nR3oL0EJL._AC_UF894,1000_QL80_.jpg",
+        "https://domf5oio6qrcr.cloudfront.net/medialibrary/7740/b17db71e-03ff-427a-a27e-64aea28c45b016207267438013.jpg",
+      description: "Browse our curated collection of mindfulness videos...",
+    },
+    {
+      title: "Interactive Brain Games",
+      image:
+        "https://content.tinytap.it/AFF21205-D591-4C51-B172-83A5C181804A/unzipped/photo2/photo2.jpg",
+      description: "Fun and engaging games to boost your cognitive skills...",
+    },
+    {
+      title: "Mind Games of the 1 Percent",
+      image:
+        "https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half/public/field_blog_entry_images/2018-04/pmg-inkblots3.jpg?itok=lw2yWVU2",
       description:
-        "ფილმი ემოციების სამყაროზე — სასწავლო ფსიქოლოგიური ანიმაცია.",
+        "Progress depends upon resisting and debunking the 1%'s manipulative appeals...",
     },
     {
-      title: "Good Will Hunting",
+      title: "Psychology Sessions",
       image:
-        "https://m.media-amazon.com/images/I/51N5X9tX1zL._AC_UF894,1000_QL80_.jpg",
-      description: "ინსპირაციული ფილმი თვითშემეცნებაზე და თვითშეფასებაზე.",
+        "https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/752c00bb2e0f5567bd75c625/pexels-photo-2381069.jpeg",
+      description: "Deep dive into your mindset with professional guidance...",
     },
     {
-      title: "Mindful Breathing",
-      image: "https://cdn-icons-png.flaticon.com/512/4625/4625692.png",
-      description: "სუნთქვითი ვარჯიშები სტრესის შესამცირებლად.",
-    },
-    {
-      title: "The Social Dilemma",
+      title: "How To Talk To Anyone",
       image:
-        "https://m.media-amazon.com/images/I/81m7+lbQ41L._AC_UF1000,1000_QL80_.jpg",
-      description: "ფილმი სოციალური მედიის ზეგავლენაზე ფსიქოლოგიაზე.",
-    },
-    {
-      title: "The Mind Game",
-      image:
-        "https://img.freepik.com/free-vector/brain-training-illustration_1284-12019.jpg",
-      description: "თამაში, რომელიც აძლიერებს ყურადღებას და მეხსიერებას.",
-    },
-    {
-      title: "Calm Meditation",
-      image: "https://cdn-icons-png.flaticon.com/512/3750/3750028.png",
-      description: "მშვიდი აპლიკაცია მედიტაციისთვის.",
+        "https://covers.storytel.com/jpg-640/9798868686214.9903ae67-0d13-495a-bd3d-3e28d3059555?optimize=high&quality=70&width=600",
+      description: "Improve Your Social Skills, Develop Charisma...",
     },
   ];
+
   return (
     <section
-      className={`min-h-screen flex flex-col items-center py-24 transition ${
-        dark
-          ? "bg-gray-900 text-gray-100"
-          : "bg-gradient-to-br  from-gray-50 to-blue-50 text-gray-900"
+      className={`py-16 px-6 transition ${
+        dark ? "bg-gray-900 text-gray-100" : "bg-white text-gray-900"
       }`}
     >
-      <h1 className="text-3xl font-bold mb-10">
-        Psychological recommendations
-      </h1>
-
-      <div className="flex flex-wrap justify-center gap-8 max-w-6xl">
-        {mediaList.map((item, i) => (
-          <MediaCard key={i} {...item} dark={dark} />
+      <h2 className="text-3xl font-bold text-center mt-10 mb-10">
+        Our Services
+      </h2>
+      <div className="max-w-6xl mx-auto grid gap-8 grid-cols-1 md:grid-cols-3">
+        {services.map((item, idx) => (
+          <div
+            key={idx}
+            className={`rounded-2xl overflow-hidden shadow-lg transition ${
+              dark ? "bg-gray-800" : "bg-gray-50"
+            }`}
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-52 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+              <p className="text-gray-600 mb-5">{item.description}</p>
+              <button
+                className={`px-4 py-2 rounded-lg font-medium transition ${
+                  dark
+                    ? "bg-blue-600 text-white hover:bg-blue-700"
+                    : "bg-blue-500 text-white hover:bg-blue-600"
+                }`}
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
         ))}
       </div>
     </section>
-  );
-}
-
-function MediaCard({ dark, title, image, description }) {
-  const [likes, setLikes] = useState(0);
-  const [added, setAdded] = useState(false);
-
-  return (
-    <div
-      className={`rounded-2xl overflow-hidden w-72 shadow-mb transition ${
-        dark ? "bg-gray-800 text-gray-200" : "bg-white text-gray-800"
-      }`}
-    >
-      <img src={image} alt={title} className="w-full h-44 object-cover" />
-      <div className="p-4 ">
-        <h3 className="text-lg font-semibold mb-2">{title}</h3>
-        <p className="text-sm mb-4">{description}</p>
-
-        <div className="flex justify-around text-white ">
-          <button onClick={() => setLikes(likes + 1)}>
-            {likes ? (
-              <i className="fa-solid fa-heart"></i>
-            ) : (
-              <i classname="fa-regular fa-heart"></i>
-            )}
-
-            <span>{likes}</span>
-          </button>
-          <div className="flex justify-end gap-4">
-            <button
-              onClick={() => setAdded(!added)}
-              className={`px-3 py-1 rounded-lg text-sm transition ${
-                added
-                  ? "bg-green-500 text-white hover:bg-green-600 "
-                  : dark
-                  ? "bg-gray-700 text-gray-200 hover:bg-gray-600"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300 "
-              }`}
-            >
-              {added ? "Added" : "Add"}
-            </button>
-
-            <button
-              className={`px-3 py-1 rounded-lg text-sm transition ${
-                dark
-                  ? "bg-blue-600 text-white hover:bg-blue-700"
-                  : "bg-blue-500 text-white hover:bg-blue-600"
-              }`}
-            >
-              show more
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }
