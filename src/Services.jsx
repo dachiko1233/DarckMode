@@ -1,7 +1,7 @@
 export default function ThreeServices({ dark }) {
   const services = [
     {
-      title: "Dark Psychology & Gaslighting Manipulation",
+      title: "Dark Psychology",
       image:
         "https://covers.storytel.com/jpg-640/9798368965062.53bf9ecb-db99-4303-ae06-d815ea66521c?optimize=high&quality=70&width=600",
       description: "How to Analyze People and Master Human Behaviour...",
@@ -20,7 +20,7 @@ export default function ThreeServices({ dark }) {
       description: "Fun and engaging games to boost your cognitive skills...",
     },
     {
-      title: "Mind Games of the 1 Percent",
+      title: "Mind Games ",
       image:
         "https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half/public/field_blog_entry_images/2018-04/pmg-inkblots3.jpg?itok=lw2yWVU2",
       description:
@@ -42,13 +42,11 @@ export default function ThreeServices({ dark }) {
 
   return (
     <section
-      className={`py-16 px-6 transition ${
+      className={` py-16 px-6 transition ${
         dark ? "bg-gray-900 text-gray-100" : "bg-white text-gray-900"
       }`}
     >
-      <h2 className="text-3xl font-bold text-center mt-10 mb-10">
-        Our Services
-      </h2>
+      <h2 className="text-3xl font-bold text-center mb-10">Our Services</h2>
       <div className="max-w-6xl mx-auto grid gap-8 grid-cols-1 md:grid-cols-3">
         {services.map((item, idx) => (
           <div
@@ -62,11 +60,11 @@ export default function ThreeServices({ dark }) {
               alt={item.title}
               className="w-full h-52 object-cover"
             />
-            <div className="p-6">
+            <div className="p-6 flex flex-col ">
               <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
               <p className="text-gray-600 mb-5">{item.description}</p>
               <button
-                className={`px-4 py-2 rounded-lg font-medium transition ${
+                className={` px-4 py-2 rounded-lg font-medium transition ${
                   dark
                     ? "bg-blue-600 text-white hover:bg-blue-700"
                     : "bg-blue-500 text-white hover:bg-blue-600"

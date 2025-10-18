@@ -4,6 +4,7 @@ import { Features } from "./Features";
 import { Hero } from "./Hero";
 import { NavBar } from "./NavBar";
 import Services from "./Services";
+import HowTo from "./HowTo";
 
 export default function App() {
   const [dark, setDark] = useState(true);
@@ -13,13 +14,18 @@ export default function App() {
   }
   return (
     <div
-      className={`min-h-screen transition ${dark ? "bg-gray-900" : "bg-white"}`}
+      className={`min-h-screen scroll-smooth transition ${
+        dark ? "bg-gray-900" : "bg-white"
+      }`}
     >
       <NavBar dark={dark} onDark={toggleDark} setPage={setPage} />
+
       {page === "home" && <Hero dark={dark} />}
 
       {page === "features" && <Features dark={dark} />}
       {page === "services" && <Services dark={dark} />}
+
+      <HowTo dark={dark} />
 
       <Footer dark={dark} />
     </div>

@@ -1,7 +1,7 @@
 export function Footer({ dark }) {
   return (
     <footer
-      className={`text-center py-6 transition ${
+      className={`flex justify-center  text-center  py-6 transition ${
         dark ? "bg-gray-950 text-gray-400" : "bg-gray-200 text-gray-700"
       }`}
     >

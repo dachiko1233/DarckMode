@@ -1,7 +1,7 @@
 export function NavBar({ dark, onDark, setPage }) {
   return (
     <nav
-      className={`w-full fixed top-0 left-0 z-10 transition ${
+      className={`w-full fixed top-0 left-0 z-10 transition  ${
         dark ? "bg-gray-900 text-gray-100" : "bg-white text-gray-800 shadow-md"
       }`}
     >
